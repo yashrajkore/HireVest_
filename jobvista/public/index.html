@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JobVista</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <script type="module" src="/src/App.jsx"></script>
+  <script src="https://kit.fontawesome.com/b3878f124d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Job<span>Vista</span></div>
+    <nav>
+      <a href="#" id="starter">Home</a>
+      <a href="#jobs">Jobs</a>
+      <a href="#Contact">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="signUp.html"><button class="login-btn">Join Now!</button></a>
+  </header>
+
+  <section class="hero">
+    <h1>Find Your Dream Job With JobVista</h1>
+    <p>Connect with top employers and discover opportunities that match your skills and aspirations. Your next career move starts here.</p>
+    <div class="hero-buttons">
+      <a href="findJobs.html"><button class="find-jobs">Find Jobs</button></a>
+      <a href="postJob.html"><button class="post-job">Post a Job</button></a>
+    </div>
+
+    <form action="findJobs.html" method="GET">
+    <div class="search-bar">
+      <input type="text" name="query" id="searchInput" placeholder="Search by job title or skills">
+      <button type="submit">Search</button>
+    </div>
+  </form>
+
+    </div>
+  </section>
+
+  <section id="jobs" class="jobs-section">
+    <h2 class="section-title">Latest & Top Job Openings</h2>
+    <div class="jobs-grid">
+  
+      <!-- Job Card 1 -->
+      <div class="job-card">
+        <div class="job-header">
+          <img src="logo1.png" alt="Company Logo">
+          <div>
+            <h3>Data Scientist</h3>
+            <p>TCS</p>
+          </div>
+        </div>
+        <div class="job-info">
+          <span class="badge">remote</span>
+          <span>Pune</span>
+        </div>
+        <div class="job-salary">9.5 LPA</div>
+        <div class="job-positions">2 Positions</div>
+        <div class="job-details-link"><a href="details.html">Details →</a></div>
+      </div>
+  
+      <!-- Job Card 2 -->
+      <div class="job-card">
+        <div class="job-header">
+          <img src="logo2.png" alt="Company Logo">
+          <div>
+            <h3>Frontend Developer</h3>
+            <p>Adobe</p>
+          </div>
+        </div>
+        <div class="job-info">
+          <span class="badge">remote</span>
+          <span>Hyderabad</span>
+        </div>
+        <div class="job-salary">8.5 LPA</div>
+        <div class="job-positions">3 Positions</div>
+        <div class="job-details-link"><a href="detail2.html">Details →</a></div>
+      </div>
+  
+      <!-- Job Card 3 -->
+      <div class="job-card">
+        <div class="job-header">
+          <img src="logo3.png" alt="Company Logo">
+          <div>
+            <h3>Java Developer</h3>
+            <p>Infosys</p>
+          </div>
+        </div>
+        <div class="job-info">
+          <span class="badge onsite">On site</span>
+          <span>Surat</span>
+        </div>
+        <div class="job-salary">6.5 LPA</div>
+        <div class="job-positions">10 Positions</div>
+        <div class="job-details-link"><a href="detail3.html">Details →</a></div>
+      </div>
+
+      <!--Job 4 card-->
+      <div class="job-card">
+        <div class="job-header">
+          <img src="logo4.png" alt="Company Logo">
+          <div>
+            <h3>Cloud Engineer</h3>
+            <p>Google</p>
+          </div>
+        </div>
+        <div class="job-info">
+          <span class="badge onsite">On site</span>
+          <span>Bangalore</span>
+        </div>
+        <div class="job-salary">24 LPA</div>
+        <div class="job-positions">8 Positions</div>
+        <div class="job-details-link"><a href="detail4.html">Details →</a></div>
+      </div>
+
+      <!--job 5 card-->
+      <div class="job-card">
+        <div class="job-header">
+          <img src="logo5.png" alt="Company Logo">
+          <div>
+            <h3>Machine Learning Engineer</h3>
+            <p>Microsoft</p>
+          </div>
+        </div>
+        <div class="job-info">
+          <span class="badge">remote</span>
+          <span>Hyderabad</span>
+        </div>
+        <div class="job-salary">28 LPA</div>
+        <div class="job-positions">4 Positions</div>
+        <div class="job-details-link"><a href="detail5.html">Details →</a></div>
+      </div>
+
+      <!--Job-6 card-->
+      <div class="job-card">
+        <div class="job-header">
+          <img src="logo6.jpg" alt="Company Logo">
+          <div>
+            <h3>Android Developer</h3>
+            <p>Zomato</p>
+          </div>
+        </div>
+        <div class="job-info">
+          <span class="badge onsite">On site</span>
+          <span>Pune</span>
+        </div>
+        <div class="job-salary">7.5 LPA</div>
+        <div class="job-positions">8 Positions</div>
+        <div class="job-details-link"><a href="detail6.html">Details →</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Footer Section-->
+  <footer class="site-footer" id="Contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About JobVista</h3>
+        <p>Connecting talented professionals with innovative companies worldwide.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Find Jobs</a></li>
+          <li><a href="#">Companies</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      <p>© 2025 JobVista. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://deepai.org/chat"><button class="chatbot-button">Ask Vista AI ✨</button></a>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply for Job | JobVista</title>
+  <link rel="stylesheet" href="apply.css" />
+</head>
+<style>
+    /* Apply Page Theme Based on JobVista Screenshot */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0b1120;
+    color: #ffffff;
+  }
+  header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #181e35;
+}
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.logo span {
+  color: #6495ed;
+}
+  
+  .form-container {
+    max-width: 600px;
+    margin: 60px auto;
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #93c5fd;
+  }
+  
+  form label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 500;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  form input[type="file"] {
+    padding: 8px;
+  }
+  
+  button[type="submit"] {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #60a5fa, #818cf8);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background: linear-gradient(to right, #3b82f6, #6366f1);
+  }
+</style>
+<body>
+  <header>
+    <div class="logo">Job<span>Vista</span></div>
+  </header>
+
+  <main class="form-container">
+    <h1>Apply for Your Dream Job</h1>
+    <form action="http://localhost:3000/apply" method="POST" enctype="multipart/form-data">
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="resume">Upload Resume</label>
+      <input type="file" id="resume" name="resume" required />
+
+      <label for="message">Cover Letter</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write a short cover letter..."></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </main>
+</body>
+</html>

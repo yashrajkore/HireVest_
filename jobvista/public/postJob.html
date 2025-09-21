@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post a Job | JobVista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    background-color: #1b1c2b;
+}
+.post-job-form-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px 40px;
+  background-color: #1c1e38;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.post-job-form-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  background: linear-gradient(to right, #6a5af9, #b14cf3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Input & Textarea Styles */
+#postJobForm input,
+#postJobForm textarea {
+  width: 100%;
+  padding: 14px 8px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2c2f48;
+  color: #f1f1f1;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#postJobForm input:focus,
+#postJobForm textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #835df3;
+}
+
+/* Submit Button */
+#postJobForm button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #6a5af9, #b14cf3);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#postJobForm button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .post-job-form-container {
+    padding: 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <main class="post-job-form-container">
+    <h1>Post a New Job</h1>
+    <form id="postJobForm">
+      <input type="text" name="title" placeholder="Job Title" required>
+      <input type="text" name="company" placeholder="Company Name" required>
+      <input type="text" name="location" placeholder="Location" required>
+      <input type="text" name="salary" placeholder="Salary (e.g., 10 LPA)" required>
+      <input type="number" name="positions" placeholder="Number of Positions" required>
+      <textarea name="description" placeholder="Job Description" required></textarea>
+      <button type="submit">Submit Job</button>
+    </form>
+  </main>
+
+  <script>
+    // postJob.js
+    document.getElementById("postJobForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Job posted successfully! (Functionality to be implemented with backend)");
+        this.reset();
+    });
+
+  </script>
+</body>
+</html>

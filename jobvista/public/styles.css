@@ -333,7 +333,16 @@ nav a:hover {
   background: #7c3aed;
   transform: scale(1.1);
 }
-
+.chart-container {
+  margin-top: 15px;
+  background: #111827;
+  padding: 15px;
+  border-radius: 10px;
+}
+.chart-container canvas {
+  width: 100% !important;
+  height: 200px !important;
+}
       .site-footer {
         background-color: #000000;
         color: #f1f5f9;

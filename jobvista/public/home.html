@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JobVista</title>
+  <title>HireVest</title>
+  <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
   <script type="module" src="/src/App.jsx"></script>
   <script src="https://kit.fontawesome.com/b3878f124d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
   body {
   margin: 0;
@@ -410,7 +412,7 @@ hr {
 </head>
 <body>
   <header>
-    <div class="logo">Job<span>Vista</span></div>
+    <div class="logo">Hire<span>Vest</span></div>
     <nav>
       <a href="#" id="starter">Home</a>
       <a href="#jobs">Jobs</a>
@@ -423,16 +425,14 @@ hr {
       </span>
     </nav>
   </header>
-
   <section class="hero">
-    <h1>Find Your Dream Job With JobVista</h1>
-    <p>Connect with top employers and discover opportunities that match your skills and aspirations. Your next career move starts here.</p>
+    <h1>Get To Know The Industry With HireVest</h1>
+    <p>Welcome to the new era of career building — where finding the right job goes hand-in-hand with understanding the market. Explore opportunities, and track stock predictions to shape a future that is truly yours.”</p>
     <div class="hero-buttons">
       <a href="homejobs.html"><button class="find-jobs">Find Jobs</button></a>
-      <a href="postJob.html"><button class="post-job">Post a Job</button></a>
     </div>
 
-    <form action="findJobs.html" method="GET">
+    <form action="homejobs.html" method="GET">
     <div class="search-bar">
       <input type="text" name="query" id="searchInput" placeholder="Search by job title or skills">
       <button type="submit">Search</button>
@@ -447,23 +447,75 @@ hr {
     <div class="jobs-grid">
   
       <!-- Job Card 1 -->
-      <div class="job-card">
-        <div class="job-header">
-          <img src="logo1.png" alt="Company Logo">
-          <div>
-            <h3>Data Scientist</h3>
-            <p>TCS</p>
-          </div>
-        </div>
-        <div class="job-info">
-          <span class="badge">remote</span>
-          <span>Pune</span>
-        </div>
-        <div class="job-salary">9.5 LPA</div>
-        <div class="job-positions">2 Positions</div>
-        <div class="job-details-link"><a href="details.html">Details →</a></div>
-      </div>
-  
+    <div class="job-card">
+    <div class="job-header">
+    <img src="logo1.png" alt="Company Logo">
+    <div>
+      <h3>Data Scientist</h3>
+      <p>TCS</p>
+    </div>
+  </div>
+
+  <div class="job-info">
+    <span class="badge">remote</span>
+    <span>Pune</span>
+  </div>
+
+  <div class="job-salary">9.5 LPA</div>
+  <div class="job-positions">2 Positions</div>
+
+  <div class="job-footer">
+    <div class="job-details-link">
+      <a href="details.html">Details →</a>
+    </div>
+    <button class="analysis-btn" onclick="showStock('TCS', 'chart1')">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
+
+  <!-- Hidden Chart -->
+  <div class="chart-container" id="chart1" style="display: none;">
+    <canvas></canvas>
+  </div>
+</div>
+
+<script>
+function showStock(company, chartId) {
+  const container = document.getElementById(chartId);
+  container.style.display = container.style.display === "none" ? "block" : "none";
+
+  const ctx = container.querySelector("canvas");
+
+  // Example mock stock data (replace with real API later)
+  const data = {
+    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    datasets: [{
+      label: company + " Stock Price",
+      data: [3450, 3480, 3475, 3500, 3520, 3540, 3600], // Example stock prices
+      borderColor: "#8b5cf6",
+      backgroundColor: "rgba(139, 92, 246, 0.2)",
+      fill: true,
+      tension: 0.3
+    }]
+  };
+
+  new Chart(ctx, {
+    type: "line",
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: "#f1f5f9" } }
+      },
+      scales: {
+        x: { ticks: { color: "#94a3b8" } },
+        y: { ticks: { color: "#94a3b8" } }
+      }
+    }
+  });
+}
+</script>
+
       <!-- Job Card 2 -->
       <div class="job-card">
         <div class="job-header">
@@ -479,7 +531,19 @@ hr {
         </div>
         <div class="job-salary">8.5 LPA</div>
         <div class="job-positions">3 Positions</div>
-        <div class="job-details-link"><a href="detail2.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail2.html">Details →</a>
+    </div>
+    <button class="analysis-btn" onclick="showStock('Adobe', 'chart2')">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
+
+  <!-- Hidden Chart -->
+  <div class="chart-container" id="chart2" style="display: none;">
+    <canvas></canvas>
+  </div>
       </div>
   
       <!-- Job Card 3 -->
@@ -497,7 +561,19 @@ hr {
         </div>
         <div class="job-salary">6.5 LPA</div>
         <div class="job-positions">10 Positions</div>
-        <div class="job-details-link"><a href="detail3.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail3.html">Details →</a>
+    </div>
+    <button class="analysis-btn" onclick="showStock('Infosys', 'chart3')">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
+
+  <!-- Hidden Chart -->
+  <div class="chart-container" id="chart3" style="display: none;">
+    <canvas></canvas>
+  </div>
       </div>
 
       <!--Job 4 card-->
@@ -515,7 +591,19 @@ hr {
         </div>
         <div class="job-salary">24 LPA</div>
         <div class="job-positions">8 Positions</div>
-        <div class="job-details-link"><a href="detail4.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail4.html">Details →</a>
+    </div>
+    <button class="analysis-btn" onclick="showStock('Google', 'chart4')">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
+
+  <!-- Hidden Chart -->
+  <div class="chart-container" id="chart4" style="display: none;">
+    <canvas></canvas>
+  </div>
       </div>
 
       <!--job 5 card-->
@@ -533,9 +621,20 @@ hr {
         </div>
         <div class="job-salary">28 LPA</div>
         <div class="job-positions">4 Positions</div>
-        <div class="job-details-link"><a href="detail5.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail5.html">Details →</a>
+    </div>
+    <button class="analysis-btn" onclick="showStock('Microsoft', 'chart5')">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
+  <!-- Hidden Chart -->
+  <div class="chart-container" id="chart5" style="display: none;">
+    <canvas></canvas>
+  </div>
       </div>
-
+      
       <!--Job-6 card-->
       <div class="job-card">
         <div class="job-header">
@@ -551,9 +650,19 @@ hr {
         </div>
         <div class="job-salary">7.5 LPA</div>
         <div class="job-positions">8 Positions</div>
-        <div class="job-details-link"><a href="detail6.html">Details →</a></div>
-      </div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail6.html">Details →</a>
+    </div>
+    <button class="analysis-btn" onclick="showStock('Zomato', 'chart6')">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
 
+  <!-- Hidden Chart -->
+  <div class="chart-container" id="chart6" style="display: none;">
+    <canvas></canvas>
+  </div>
     </div>
   </section>
 
@@ -597,9 +706,7 @@ hr {
     </div>
   </footer>
 
-  <a href="https://deepai.org/chat"><button class="chatbot-button">Ask Vista AI ✨</button></a>
-
-  
+  <a href="https://deepai.org/chat"><button class="chatbot-button">Ask AI ✨</button></a>
 
 <script>
     const userIcon = document.querySelector('.user-icon');

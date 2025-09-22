@@ -15,25 +15,32 @@ const registerForm = document.querySelector('.sign-up form');
 const loginForm = document.querySelector('.sign-in form');
 
 // Handle Register
+// Handle Register
 registerForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const name = registerForm.querySelector('input[placeholder="Name"]').value;
-  const email = registerForm.querySelector('input[placeholder="Email"]').value;
-  const password = registerForm.querySelector('input[placeholder="Password"]').value;
+    const name = registerForm.querySelector('input[placeholder="Name"]').value;
+    const email = registerForm.querySelector('input[placeholder="Email"]').value;
+    const password = registerForm.querySelector('input[placeholder="Password"]').value;
+    const userType = registerForm.querySelector('#user-type').value; // 👈 Get the new user type value
 
-  const res = await fetch('/register', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, password })
-  });
+    const res = await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password, userType }) // 👈 Include the new value
+    });
 
-  const data = await res.json();
-  if (data.success) {
-    window.location.href = 'home.html'; // 👈 redirect to homepage
-  } else {
-    showError(data.message);
-  }
+    const data = await res.json();
+    if (data.success) {
+        // 👈 Redirect based on user type
+        if (userType === 'job_seeker') {
+            window.location.href = 'home.html';
+        } else if (userType === 'recruiter') {
+            window.location.href = 'recruiter_home.html';
+        }
+    } else {
+        showError(data.message);
+    }
 });
 
 // Handle Login

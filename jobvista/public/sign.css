@@ -40,7 +40,17 @@ body{
 .container span{
     font-size: 12px;
 }
-
+.container select {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+}
 .container a{
     color: #333;
     font-size: 13px;

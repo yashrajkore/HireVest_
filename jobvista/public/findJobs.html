@@ -237,7 +237,7 @@
 
     </section>
     <section id="listing">
-    <div class="job-card" id="top_pos">
+  <div class="job-card" id="top_pos">
   <div class="job-header">
     <img src="logo1.png" alt="Company Logo">
     <div>
@@ -266,7 +266,7 @@
 </div>
 
 
-      <div class="job-card">
+  <div class="job-card">
         <div class="job-header">
           <img src="logo2.png" alt="Company Logo">
           <div>
@@ -291,29 +291,29 @@
       </div>
   
       <!-- Job Card 3 -->
-      <div class="job-card">
-        <div class="job-header">
-          <img src="logo3.png" alt="Company Logo">
-          <div>
-            <h3>Java Developer</h3>
-            <p>Infosys</p>
-          </div>
+  <div class="job-card">
+      <div class="job-header">
+        <img src="logo3.png" alt="Company Logo">
+        <div>
+          <h3>Java Developer</h3>
+          <p>Infosys</p>
         </div>
-        <div class="job-info">
-          <span class="badge onsite">On site</span>
-          <span>Surat</span>
-        </div>
-        <div class="job-salary">6.5 LPA</div>
-        <div class="job-positions">10 Positions</div>
-        <div class="job-footer">
-    <div class="job-details-link">
-      <a href="detail3.html">Details →</a>
-    </div>
-    <button class="analysis-btn">
-      <i class="fas fa-chart-line"></i>
-    </button>
-  </div>
       </div>
+      <div class="job-info">
+        <span class="badge onsite">On site</span>
+        <span>Surat</span>
+      </div>
+      <div class="job-salary">6.5 LPA</div>
+      <div class="job-positions">10 Positions</div>
+      <div class="job-footer">
+      <div class="job-details-link">
+        <a href="detail3.html">Details →</a>
+      </div>
+      <button class="analysis-btn">
+        <i class="fas fa-chart-line"></i>
+      </button>
+    </div>
+  </div>
 
       <!--Job 4 card-->
       <div class="job-card">
@@ -389,6 +389,10 @@
     </button>
   </div>
       </div>
+
+    <div id="dynamic-jobs-container">
+    </div>
+
     </section>
     </div>
 
@@ -442,5 +446,33 @@
     });
   }
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('dynamic-jobs-container');
+        
+        // 1. Get the jobs from LocalStorage
+        const storedJobs = JSON.parse(localStorage.getItem('portalJobs')) || [];
+
+        // 2. Loop through them and create the HTML cards
+        storedJobs.forEach(job => {
+            const jobCard = document.createElement('div');
+            jobCard.className = 'job-card'; // Use your existing CSS class for styling
+            
+            jobCard.innerHTML = `
+                <div class="card-content">
+                    <h3>${job.title}</h3>
+                    <p><strong>Company:</strong> ${job.company}</p>
+                    <p><strong>Location:</strong> ${job.location}</p>
+                    <p><strong>Salary:</strong> ${job.salary}</p>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            `;
+            
+            container.appendChild(jobCard);
+        });
+    });
+</script>
+
 </body>
 </html>

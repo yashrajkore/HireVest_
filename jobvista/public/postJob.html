@@ -82,24 +82,45 @@ body{
   <main class="post-job-form-container">
     <h1>Post a New Job</h1>
     <form id="postJobForm">
-      <input type="text" name="title" placeholder="Job Title" required>
-      <input type="text" name="company" placeholder="Company Name" required>
-      <input type="text" name="location" placeholder="Location" required>
-      <input type="text" name="salary" placeholder="Salary (e.g., 10 LPA)" required>
-      <input type="number" name="positions" placeholder="Number of Positions" required>
+      <input type="text" id="job-title" name="title" placeholder="Job Title" required>
+      <input type="text" id="company-name" name="company" placeholder="Company Name" required>
+      <input type="text" id="job-location" name="location" placeholder="Location" required>
+      <input type="text" id="salary" placeholder="Salary (e.g., 10 LPA)" required>
+      <input type="number" id="role-positions" name="positions" placeholder="Number of Positions" required>
       <textarea name="description" placeholder="Job Description" required></textarea>
       <button type="submit">Submit Job</button>
     </form>
   </main>
 
   <script>
-    // postJob.js
-    document.getElementById("postJobForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("Job posted successfully! (Functionality to be implemented with backend)");
-        this.reset();
-    });
+    const jobForm = document.getElementById('postJobForm');
 
-  </script>
+    jobForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevents the page from refreshing
+
+        // 1. Capture the values
+        const newJob = {
+            id: Date.now(), // Unique ID for each job
+            company: document.getElementById('company-name').value,
+            title: document.getElementById('job-title').value,
+            salary: document.getElementById('salary').value,
+            location: document.getElementById('location').value
+        };
+
+        // 2. Get existing jobs from LocalStorage OR start with an empty array
+        const existingJobs = JSON.parse(localStorage.getItem('portalJobs')) || [];
+
+        // 3. Add the new job to the array
+        existingJobs.push(newJob);
+
+        // 4. Save the updated array back to LocalStorage
+        localStorage.setItem('portalJobs', JSON.stringify(existingJobs));
+
+        alert('Job Posted Successfully!');
+        
+        // 5. Optional: Redirect to the listings page immediately
+        window.location.href = 'findJobs.html';
+    });
+</script>
 </body>
 </html>

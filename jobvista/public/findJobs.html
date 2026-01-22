@@ -450,27 +450,45 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const container = document.getElementById('dynamic-jobs-container');
-        
-        // 1. Get the jobs from LocalStorage
         const storedJobs = JSON.parse(localStorage.getItem('portalJobs')) || [];
 
-        // 2. Loop through them and create the HTML cards
         storedJobs.forEach(job => {
             const jobCard = document.createElement('div');
-            jobCard.className = 'job-card'; // Use your existing CSS class for styling
+            jobCard.className = 'job-card'; // This triggers your existing CSS
             
+            // We mirror your exact HTML structure here
             jobCard.innerHTML = `
-                <div class="card-content">
-                    <h3>${job.title}</h3>
-                    <p><strong>Company:</strong> ${job.company}</p>
-                    <p><strong>Location:</strong> ${job.location}</p>
-                    <p><strong>Salary:</strong> ${job.salary}</p>
-                    <button class="apply-btn">Apply Now</button>
+                <div class="job-header">
+                    <img src="https://via.placeholder.com/40" alt="Company Logo">
+                    <div>
+                        <h3>${job.title}</h3>
+                        <p>${job.company}</p>
+                    </div>
+                </div>
+
+                <div class="job-info">
+                    <span class="badge">${job.badge}</span>
+                    <span>${job.location}</span>
+                </div>
+
+                <div class="job-salary">${job.salary}</div>
+                <div class="job-positions">${job.positions} Positions</div>
+
+                <div class="job-footer">
+                    <div class="job-details-link">
+                        <a href="#">Details →</a>
+                    </div>
+                    <button class="analysis-btn">
+                        <i class="fas fa-chart-line"></i>
+                    </button>
                 </div>
             `;
             
             container.appendChild(jobCard);
         });
+        
+        // Refresh the filter logic after adding new cards
+        filterJobs(); 
     });
 </script>
 

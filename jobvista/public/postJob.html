@@ -96,31 +96,27 @@ body{
     const jobForm = document.getElementById('postJobForm');
 
     jobForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevents the page from refreshing
+        e.preventDefault();
 
-        // 1. Capture the values
+        // 1. Capture the values (Fixed IDs to match your HTML)
         const newJob = {
-            id: Date.now(), // Unique ID for each job
-            company: document.getElementById('company-name').value,
+            id: Date.now(),
             title: document.getElementById('job-title').value,
+            company: document.getElementById('company-name').value,
+            location: document.getElementById('job-location').value, // Fixed ID
             salary: document.getElementById('salary').value,
-            location: document.getElementById('location').value
+            positions: document.getElementById('role-positions').value, // Added Positions
+            badge: "remote" // Defaulting to remote for now
         };
 
-        // 2. Get existing jobs from LocalStorage OR start with an empty array
+        // 2. Save to LocalStorage
         const existingJobs = JSON.parse(localStorage.getItem('portalJobs')) || [];
-
-        // 3. Add the new job to the array
         existingJobs.push(newJob);
-
-        // 4. Save the updated array back to LocalStorage
         localStorage.setItem('portalJobs', JSON.stringify(existingJobs));
 
         alert('Job Posted Successfully!');
-        
-        // 5. Optional: Redirect to the listings page immediately
         window.location.href = 'findJobs.html';
     });
-</script>
+  </script>
 </body>
 </html>

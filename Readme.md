@@ -43,7 +43,7 @@ HireVest is a premium, high-performance job portal designed for the modern job-s
 - Clone the repository:
 
     ```
-    git clone https://github.com/yourusername/HireVest.git
+    git clone https://github.com/yourusername/HireVest_.git
     ```
 - Open the project: 
 
@@ -57,3 +57,11 @@ HireVest is a premium, high-performance job portal designed for the modern job-s
 
 ## 🤝 Contribution & Feedback
 HireVest is a student-led project. If you have ideas on how to improve the stock mapping or the sentiment analysis logic, feel free to fork this repo and submit a PR!
+
+---
+
+## 👨‍💻 Developed by
+- Yashraj Kore - Passionate Developer & Financial Enthusiast
+- Tejas Jadhav - Passionate Developer & Financial Enthusiast
+- Karan More - Passionate Developer & Financial Enthusiast
+- Aditya Patil - Passionate Developer & Financial Enthusiast

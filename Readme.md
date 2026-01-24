@@ -61,7 +61,7 @@ HireVest is a student-led project. If you have ideas on how to improve the stock
 ---
 
 ## 👨‍💻 Developed by
-- Yashraj Kore - Passionate Web Developer & Financial Enthusiast
+- Yashraj Kore - Passionate Web/Java Developer & Financial Enthusiast
 - Tejas Jadhav - Passionate Python Developer
 - Karan More - Passionate Web Developer
-- Aditya Patil - Passionate Developer 
+- Aditya Patil - Passionate Developer

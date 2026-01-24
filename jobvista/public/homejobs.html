@@ -101,6 +101,28 @@
       .job-details-link a:hover {
         text-decoration: underline;
       }
+
+      .job-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .analysis-btn {
+        background: #8b5cf6;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: white;
+        font-size: 1rem;
+        transition: background 0.3s ease-in-out, transform 0.2s;
+      }
+
+      .analysis-btn:hover {
+        background: #7c3aed;
+        transform: scale(1.1);
+      }
       #listing{
         float: right;
         margin-right: 50px;
@@ -133,39 +155,97 @@
           color: blue;
         }
         .user-icon {
-  font-size: 28px;
-  margin-top: 10px;
-  margin-left: 32px;
-  cursor: pointer;
-  color: #fff;
-  transition: 0.3s ease;
+          font-size: 28px;
+          margin-top: 10px;
+          margin-left: 32px;
+          cursor: pointer;
+          color: #fff;
+          transition: 0.3s ease;
+        }
+
+        .user-icon:hover {
+          color: #5e84e5;
+        }
+
+        .dropdown {
+          display: none;
+          position: absolute;
+          right: 0;
+          top: 40px;
+          background-color: #2a2a2a;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.6);
+          padding: 10px;
+        }
+
+        .dropdown button {
+          background: #5e84e5;
+          color: white;
+          border: none;
+          padding: 8px 15px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: 600;
+        }
+      }
+
+      .analysis-btn {
+        background: #8b5cf6;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: white;
+        font-size: 1rem;
+        transition: background 0.3s ease-in-out, transform 0.2s;
+      }
+
+      .analysis-btn:hover {
+        background: #7c3aed;
+        transform: scale(1.1);
+      }
+
+      /* Modal Styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
 }
 
-.user-icon:hover {
-  color: #5e84e5;
+.modal-content {
+  background-color: #1f2937;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 800px;
+  height: 500px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.dropdown {
-  display: none;
+.close-modal {
   position: absolute;
-  right: 0;
-  top: 40px;
-  background-color: #2a2a2a;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.6);
-  padding: 10px;
+  top: 15px;
+  right: 20px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
 }
 
-.dropdown button {
-  background: #5e84e5;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
+#chart-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 20px;
 }
-    }
+
     </style>
 </head>
 <body>
@@ -240,24 +320,37 @@
 
     </section>
     <section id="listing">
-    <div class="job-card" id="top_pos">
-        <div class="job-header">
-          <img src="logo1.png" alt="Company Logo">
-          <div>
-            <h3>Data Scientist</h3>
-            <p>TCS</p>
-          </div>
-        </div>
-        <div class="job-info">
-          <span class="badge">remote</span>
-          <span>Pune</span>
-        </div>
-        <div class="job-salary">9.5 LPA</div>
-        <div class="job-positions">2 Positions</div>
-        <div class="job-details-link"><a href="details.html">Details →</a></div>
-      </div>
+      <!-- Job-Card 1 -->
+  <div class="job-card" id="top_pos">
+  <div class="job-header">
+    <img src="logo1.png" alt="Company Logo">
+    <div>
+      <h3>Data Scientist</h3>
+      <p>TCS</p>
+    </div>
+  </div>
 
-      <div class="job-card">
+  <div class="job-info">
+    <span class="badge">remote</span>
+    <span>Pune</span>
+  </div>
+
+  <div class="job-salary">9.5 LPA</div>
+  <div class="job-positions">2 Positions</div>
+
+  <!-- footer row -->
+  <div class="job-footer">
+    <div class="job-details-link">
+      <a href="details.html">Details →</a>
+    </div>
+    <button class="analysis-btn">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
+</div>
+
+
+  <div class="job-card">
         <div class="job-header">
           <img src="logo2.png" alt="Company Logo">
           <div>
@@ -271,26 +364,40 @@
         </div>
         <div class="job-salary">8.5 LPA</div>
         <div class="job-positions">3 Positions</div>
-        <div class="job-details-link"><a href="detail2.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail2.html">Details →</a>
+    </div>
+    <button class="analysis-btn">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
       </div>
   
       <!-- Job Card 3 -->
-      <div class="job-card">
-        <div class="job-header">
-          <img src="logo3.png" alt="Company Logo">
-          <div>
-            <h3>Java Developer</h3>
-            <p>Infosys</p>
-          </div>
+  <div class="job-card">
+      <div class="job-header">
+        <img src="logo3.png" alt="Company Logo">
+        <div>
+          <h3>Java Developer</h3>
+          <p>Infosys</p>
         </div>
-        <div class="job-info">
-          <span class="badge onsite">On site</span>
-          <span>Surat</span>
-        </div>
-        <div class="job-salary">6.5 LPA</div>
-        <div class="job-positions">10 Positions</div>
-        <div class="job-details-link"><a href="detail3.html">Details →</a></div>
       </div>
+      <div class="job-info">
+        <span class="badge onsite">On site</span>
+        <span>Surat</span>
+      </div>
+      <div class="job-salary">6.5 LPA</div>
+      <div class="job-positions">10 Positions</div>
+      <div class="job-footer">
+      <div class="job-details-link">
+        <a href="detail3.html">Details →</a>
+      </div>
+      <button class="analysis-btn">
+        <i class="fas fa-chart-line"></i>
+      </button>
+    </div>
+  </div>
 
       <!--Job 4 card-->
       <div class="job-card">
@@ -307,7 +414,14 @@
         </div>
         <div class="job-salary">24 LPA</div>
         <div class="job-positions">8 Positions</div>
-        <div class="job-details-link"><a href="detail4.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail4.html">Details →</a>
+    </div>
+    <button class="analysis-btn">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
       </div>
 
       <!--job 5 card-->
@@ -325,7 +439,14 @@
         </div>
         <div class="job-salary">28 LPA</div>
         <div class="job-positions">4 Positions</div>
-        <div class="job-details-link"><a href="detail5.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail5.html">Details →</a>
+    </div>
+    <button class="analysis-btn">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
       </div>
 
       <!--Job-6 card-->
@@ -343,34 +464,21 @@
         </div>
         <div class="job-salary">7.5 LPA</div>
         <div class="job-positions">8 Positions</div>
-        <div class="job-details-link"><a href="detail6.html">Details →</a></div>
+        <div class="job-footer">
+    <div class="job-details-link">
+      <a href="detail6.html">Details →</a>
+    </div>
+    <button class="analysis-btn">
+      <i class="fas fa-chart-line"></i>
+    </button>
+  </div>
       </div>
-    </section>
+
+    <div id="dynamic-jobs-container">
     </div>
 
-    <script>
-    const userIcon = document.querySelector('.user-icon');
-    const dropdown = document.querySelector('.dropdown');
-    const logoutBtn = document.getElementById('logoutBtn');
-
-    // Toggle dropdown visibility
-    userIcon.addEventListener('click', () => {
-    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Logout action
-    logoutBtn.addEventListener('click', () => {
-    alert('Logged out successfully!');
-    window.location.href = "signUp.html"; // Change as needed
-    });
-
-    // Close dropdown if clicked outside
-    window.addEventListener('click', (e) => {
-      if (!userIcon.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.style.display = 'none';
-      }
-    });
-  </script>
+    </section>
+    </div>
 
     <script>
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
@@ -422,5 +530,126 @@
     });
   }
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('dynamic-jobs-container');
+        const storedJobs = JSON.parse(localStorage.getItem('portalJobs')) || [];
+
+        storedJobs.forEach(job => {
+            const jobCard = document.createElement('div');
+            jobCard.className = 'job-card'; // This triggers your existing CSS
+            
+            // We mirror your exact HTML structure here
+            jobCard.innerHTML = `
+                <div class="job-header">
+                    <img src="https://via.placeholder.com/40" alt="Company Logo">
+                    <div>
+                        <h3>${job.title}</h3>
+                        <p>${job.company}</p>
+                    </div>
+                </div>
+
+                <div class="job-info">
+                    <span class="badge">${job.badge}</span>
+                    <span>${job.location}</span>
+                </div>
+
+                <div class="job-salary">${job.salary}</div>
+                <div class="job-positions">${job.positions} Positions</div>
+
+                <div class="job-footer">
+                    <div class="job-details-link">
+                        <a href="#">Details →</a>
+                    </div>
+                    <button class="analysis-btn">
+                        <i class="fas fa-chart-line"></i>
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(jobCard);
+        });
+        // Refresh the filter logic after adding new cards
+        filterJobs(); 
+      });
+</script>
+
+<div id="stockModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle" style="color: white; margin-top: 0;">Company Analytics</h2>
+        <div id="chart-container">
+            </div>
+    </div>
+</div>
+
+<script>
+  // Mapping company names to Tickers (BSE/NSE for Indian, NASDAQ/NYSE for others)
+const tickerMap = {
+    "TCS": "BSE:TCS",
+    "Adobe": "NASDAQ:ADBE",
+    "Infosys": "BSE:INFY",
+    "Google": "NASDAQ:GOOGL",
+    "Microsoft": "NASDAQ:MSFT",
+    "Zomato": "BSE:ZOMATO"
+};
+
+// Use Event Delegation to handle clicks on all analysis buttons
+document.addEventListener('click', function (e) {
+    if (e.target.closest('.analysis-btn')) {
+        const card = e.target.closest('.job-card');
+        const companyName = card.querySelector('.job-header p').textContent.trim();
+        openStockAnalysis(companyName);
+    }
+});
+
+function openStockAnalysis(company) {
+    const modal = document.getElementById('stockModal');
+    const container = document.getElementById('chart-container');
+    const title = document.getElementById('modalTitle');
+    
+    title.innerText = `${company} Market Analytics`;
+    container.innerHTML = ""; // Clear old chart
+    modal.style.display = "flex";
+
+    const ticker = tickerMap[company] || "BSE:SENSEX"; // Fallback to Sensex if not found
+
+    // TradingView Widget Script
+    const script = document.createElement('script');
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+    script.type = "text/javascript";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+        "symbols": [[company, ticker]],
+        "chartOnly": false,
+        "width": "100%",
+        "height": "100%",
+        "locale": "en",
+        "colorTheme": "dark",
+        "gridLineColor": "rgba(42, 46, 57, 0)",
+        "fontFamily": "Poppins, sans-serif",
+        "trendLineColor": "#8b5cf6",
+        "underLineColor": "rgba(139, 92, 246, 0.15)",
+        "isReadOnly": false,
+        "showFloatingTooltip": true
+    });
+    
+    container.appendChild(script);
+}
+
+function closeModal() {
+    document.getElementById('stockModal').style.display = "none";
+}
+
+// Close modal if user clicks outside the box
+window.onclick = function(event) {
+    const modal = document.getElementById('stockModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+</script>
+
 </body>
 </html>

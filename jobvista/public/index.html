@@ -295,11 +295,21 @@ function showStock(company, chartId) {
     </div>
     <hr />
     <div class="footer-bottom">
-      <p>© 2025 JobVista. All rights reserved.</p>
+      <p>© 2025 HireVest. All rights reserved.</p>
     </div>
   </footer>
 
-  <a href="https://deepai.org/chat"><button class="chatbot-button">Ask AI ✨</button></a>
+  <button class="chatbot-button" onclick="window.location.href='signUp.html'">Ask AI ✨</button>
 
+<div id="chat-window" class="chat-container">
+    <div class="chat-header">HireVest AI Assistant</div>
+    <div id="chat-body" class="chat-body">
+        <p class="bot-msg">Hello! I'm the HireVest bot. Try typing <b>"jobs"</b> or <b>"home"</b>.</p>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="chat-input" placeholder="Type a command..." onkeypress="handleEnter(event)">
+        <button onclick="processCommand()">Send</button>
+    </div>
+</div>
 </body>
 </html>

@@ -168,6 +168,54 @@ nav a:hover {
       transition: background 0.3s;
     }
 
+    .chat-container {
+    display: none; /* Hidden until button is clicked */
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    height: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
+    font-family: sans-serif;
+}
+
+.chat-header {
+    background: linear-gradient(to right, #ff00e1, #0d00ff);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+#chat-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    outline: none;
+}
+
+.bot-msg { background: #e0e0e0; color: black; padding: 8px; border-radius: 10px; margin-bottom: 10px; font-size: 14px; }
+.user-msg { background: #0d00ff; color: white; padding: 8px; border-radius: 10px; margin-bottom: 10px; text-align: right; font-size: 14px; }
+
     @keyframes float {
       0%, 100% {
         transform: translateY(0);

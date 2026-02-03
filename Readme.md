@@ -17,13 +17,13 @@ HireVest is a premium, high-performance job portal designed for the modern job-s
 ---
 
 ## 📸 Visual Journey
-- 🖥️ Main Dashboard
+- #### 🖥️ Main Dashboard
     ![home](images/HomePage.jpg)
 
-- 📝 Job Listing
+- #### 📝 Job Listing
     ![listing](images/JobListings.jpg)
 
-- 📊 Financial Insights in Action
+- #### 📊 Financial Insights in Action
     ![stock](images/StockInAction.jpg)
 
 ---
@@ -56,12 +56,12 @@ HireVest is a premium, high-performance job portal designed for the modern job-s
     ```
 
 ## 🤝 Contribution & Feedback
-HireVest is a student-led project. If you have ideas on how to improve the stock mapping or the sentiment analysis logic, feel free to fork this repo and submit a PR!
+#### HireVest is a student-led project. If you have ideas on how to improve the stock mapping or the sentiment analysis logic, feel free to fork this repo and submit a PR!
 
 ---
 
 ## 👨‍💻 Developed by
-- Yashraj Kore - Passionate Web/Java Developer & Financial Enthusiast
-- Tejas Jadhav - Passionate Web/Python Developer
-- Karan More - Passionate Web/Java Developer
-- Aditya Patil - Passionate Developer
+- #### Yashraj Kore - Passionate Web/Java Developer & Financial Enthusiast
+- #### Tejas Jadhav - Passionate Web/Python Developer
+- #### Karan More - Passionate Web/Java Developer
+- #### Aditya Patil - Passionate Developer

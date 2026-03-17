@@ -1,6 +1,6 @@
 function toggleChat() {
     const chat = document.getElementById('chat-window');
-    chat.style.display = (chat.style.display === 'flex') ? 'none' : 'flex';
+    chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
 }
 
 function handleEnter(event) {
